@@ -1,0 +1,8 @@
+/*
+ * Tailwind v4 WITHOUT Preflight.
+ * Preflight (Tailwind's global reset) would override the existing EduMart styles in assets/styles/*.css,
+ * so only the theme + utility classes are loaded. Tailwind classes (e.g. "flex", "p-4") still work.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);

@@ -1,0 +1,170 @@
+
+/* EDUMART visual refresh — presentation-only overrides.
+   Existing React components, API calls, routes, and business logic are unchanged. */
+:root {
+  --edumart-wine: #65151b;
+  --edumart-wine-deep: #3e0d12;
+  --edumart-red: #922b32;
+  --edumart-gold: #d7b56d;
+  --edumart-paper: #fbf8f3;
+  --edumart-surface: #ffffff;
+  --edumart-ink: #282326;
+  --edumart-muted: #777078;
+  --edumart-line: #e9e1d8;
+}
+html { scroll-behavior: smooth; }
+body { color: var(--edumart-ink); background: var(--edumart-paper); }
+button, input, select, textarea { transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease, transform .18s ease; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #d7b56d88; outline-offset: 2px;
+}
+/* Login */
+.auth-page { background: #f5eee7; }
+.auth-intro {
+  background: radial-gradient(ellipse at 12% 18%, #8b343b 0, transparent 42%),
+              linear-gradient(145deg, #65151b, #3e0d12 85%);
+  position: relative; overflow: hidden;
+}
+.auth-intro:after {
+  content:""; position:absolute; width:300px; height:300px; right:-130px; bottom:8%;
+  border:1px solid #d7b56d55; border-radius:50%; box-shadow:0 0 0 30px #d7b56d0b,0 0 0 60px #d7b56d08;
+  pointer-events:none;
+}
+.auth-brand span { border-radius:10px; box-shadow:0 4px 14px #0002; }
+.auth-card { border:1px solid #e8ddd2; border-radius:20px; box-shadow:0 24px 70px #4b161617; }
+.auth-card h2 { color:var(--edumart-wine); }
+.auth-card input, .auth-card select { border-radius:9px; padding:12px 13px; }
+.auth-submit { border-radius:9px; background:var(--edumart-wine); box-shadow:0 5px 14px #65151b24; }
+.auth-submit:hover { background:var(--edumart-wine-deep); transform:translateY(-1px); }
+/* Admin + student dashboard */
+.admin-app { background:#f7f5f1; font-family:'DM Sans',Arial,sans-serif; }
+.admin-sidebar {
+  background:linear-gradient(180deg,#65151b 0%,#4a1015 100%);
+  box-shadow:8px 0 30px #2b11100d;
+}
+.admin-brand { padding-top:28px; }
+.admin-seal { border-color:var(--edumart-gold); box-shadow:inset 0 0 0 4px #d7b56d13; }
+.admin-motto { color:#e6ca8e; }
+.admin-nav button { border-radius:10px; transition:background .18s ease, transform .18s ease; }
+.admin-nav button:hover { transform:translateX(2px); background:#ffffff18; }
+.admin-nav button.active { background:#ffffff20; border-left-color:var(--edumart-gold); }
+.admin-main { min-width:0; }
+.admin-header { min-height:76px; padding:17px clamp(18px,3vw,36px); box-shadow:0 2px 10px #28171505; }
+.admin-campus-tag { color:var(--edumart-wine); letter-spacing:.01em; }
+.admin-avatar { background:linear-gradient(145deg,#7c2028,#4b1016); border-color:var(--edumart-gold); }
+.admin-content { padding:clamp(20px,3vw,36px); }
+.admin-page-title h2 { font-family:'Space Grotesk','DM Sans',sans-serif; letter-spacing:-.035em; font-size:clamp(25px,2.4vw,32px); }
+.admin-page-title p { line-height:1.65; }
+.admin-card,.admin-panel {
+  border-color:#ebe4dc; border-radius:15px; box-shadow:0 5px 22px #2c191008;
+}
+.admin-card { padding:20px; transition:transform .2s ease,box-shadow .2s ease; }
+.admin-card:hover { transform:translateY(-2px); box-shadow:0 10px 28px #2c191012; }
+.admin-card:before { width:4px; background:linear-gradient(180deg,#d7b56d,#b78b3d); }
+.admin-num { color:var(--edumart-wine); font-family:'Space Grotesk',sans-serif; letter-spacing:-.04em; }
+.admin-panel { padding:clamp(16px,2vw,24px); }
+.admin-panel-head { gap:12px; flex-wrap:wrap; }
+.admin-panel-head h3 { color:var(--edumart-wine); }
+.admin-action { border-radius:9px; padding:9px 13px; }
+.admin-action.primary { background:var(--edumart-wine); border-color:var(--edumart-wine); box-shadow:0 3px 9px #65151b18; }
+.admin-action.primary:hover { background:var(--edumart-wine-deep); transform:translateY(-1px); }
+.admin-notice { border-radius:0 10px 10px 0; }
+table { font-size:13px; }
+th { color:#75656a; background:#faf7f3; font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+th,td { padding:13px 12px; border-bottom:1px solid #eee7df; }
+tbody tr:hover { background:#fdfaf6; }
+.admin-app input:not([type=checkbox]), .admin-app select, .admin-app textarea {
+  border:1px solid #ded5cc; border-radius:9px; padding:10px 12px; background:#fff;
+}
+.admin-app input:focus, .admin-app select:focus, .admin-app textarea:focus {
+  border-color:#a66a6e; box-shadow:0 0 0 3px #65151b12; outline:none;
+}
+/* Marketplace cards */
+.student-item {
+  border-color:#e9e1d8; border-radius:15px; padding:15px;
+  box-shadow:0 4px 18px #2b181007; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.student-item:hover { border-color:#d7b56d; transform:translateY(-3px); box-shadow:0 12px 26px #2b181012; }
+.student-item-image { border-radius:11px; background:linear-gradient(135deg,#f7eee4,#eee0d3); }
+.student-item h3 { color:var(--edumart-wine); line-height:1.4; }
+.student-item-bottom strong { color:var(--edumart-wine); }
+.student-toolbar input, .student-toolbar select, .student-inline-form input, .student-contact input, .student-contact textarea {
+  border-radius:9px; padding:11px 12px;
+}
+.student-chips button { border-radius:999px; padding:8px 14px; }
+.student-chips button.active { background:var(--edumart-wine); border-color:var(--edumart-wine); }
+.student-cart-btn { border-radius:11px; }
+.student-cart-btn:hover { border-color:var(--edumart-gold); background:#fffaf0; }
+.student-cart-btn span { background:var(--edumart-gold); color:#3d2a08; }
+.cart-drawer { box-shadow:-16px 0 50px #0002; }
+.cart-header { border-bottom:1px solid var(--edumart-line); }
+.cart-footer .home-btn { border-radius:10px; background:var(--edumart-wine); }
+.cart-footer .home-btn:hover { background:var(--edumart-wine-deep); }
+/* Buy / sell landing and workspaces */
+.buy-sell-page { background:#fbf8f3; }
+.bs-header { box-shadow:0 3px 15px #321c1407; border-bottom-color:#e8ded4; }
+.bs-logo { letter-spacing:-.03em; }
+.bs-mark { border-radius:10px; background:var(--edumart-wine); }
+.bs-nav-button,.bs-primary { border-radius:10px; background:var(--edumart-wine); box-shadow:0 4px 12px #65151b18; }
+.bs-nav-button:hover,.bs-primary:hover { background:var(--edumart-wine-deep); transform:translateY(-1px); }
+.bs-hero { background:radial-gradient(ellipse at 85% 20%,#8d333b 0,transparent 36%),linear-gradient(125deg,#65151b,#3e0d12); }
+.bs-hero h1 { font-family:'Space Grotesk','DM Sans',sans-serif; letter-spacing:-.055em; }
+.bs-hero-button { border-radius:10px; }
+.bs-hero-button.buy { box-shadow:0 6px 18px #0002; }
+.bs-float { border:1px solid #fff9; border-radius:15px; box-shadow:0 18px 45px #21090c38; }
+.bs-section { padding-top:clamp(42px,6vw,72px); padding-bottom:clamp(42px,6vw,72px); }
+.bs-title { font-family:'Space Grotesk','DM Sans',sans-serif; letter-spacing:-.04em; color:var(--edumart-wine); }
+.bs-card,.bs-sell-box,.bs-status { border-color:#e9dfd5; border-radius:17px; box-shadow:0 6px 22px #2c191008; }
+.bs-card { transition:transform .2s ease,box-shadow .2s ease; }
+.bs-card:hover { transform:translateY(-3px); box-shadow:0 14px 30px #2c191012; }
+.bs-icon { border-radius:14px; background:#f7eee4; }
+.bs-toolbar input,.bs-toolbar select,.bs-field input,.bs-field select,.bs-field textarea { border-radius:9px; }
+.bs-cat { border-radius:999px; }
+.bs-cat.active { background:var(--edumart-wine); border-color:var(--edumart-wine); }
+.bs-item { border-radius:14px; overflow:hidden; }
+.bs-modal { border-radius:18px; box-shadow:0 24px 70px #2c11152e; }
+.bs-payment-button { border-radius:10px; }
+/* Shared polish */
+a { transition:color .18s ease; }
+::selection { background:#d7b56d55; color:#321014; }
+@media (max-width:1050px) {
+  .admin-cards { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+  .admin-content { padding:22px; }
+}
+@media (max-width:760px) {
+  .admin-sidebar { width:220px; }
+  .admin-main { margin-left:220px; width:calc(100% - 220px); }
+  .admin-header { padding:14px 16px; }
+  .admin-content { padding:18px 14px; }
+  .admin-page-title h2 { font-size:25px; }
+  .admin-panel { overflow-x:auto; }
+  .admin-cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .admin-card { padding:14px; }
+  .admin-num { font-size:24px; }
+  .bs-hero-inner { grid-template-columns:1fr; padding-top:45px; padding-bottom:45px; }
+  .bs-visual { height:250px; }
+}
+@media (max-width:560px) {
+  .admin-sidebar { width:68px; }
+  .admin-brand { padding:16px 8px; }
+  .admin-brand-row { justify-content:center; }
+  .admin-seal { width:42px; height:42px; font-size:12px; }
+  .admin-brand-row > div:last-child,.admin-motto,.admin-nav-title,.admin-nav button span:not(.admin-icon),.admin-side-bottom { display:none; }
+  .admin-nav { padding:0 7px; }
+  .admin-nav button { justify-content:center; padding:12px 4px; }
+  .admin-nav button.active { padding-left:0; border-left-width:3px; }
+  .admin-icon { width:auto; }
+  .admin-main { margin-left:68px; width:calc(100% - 68px); }
+  .admin-header-sub { display:none; }
+  .admin-user-name { display:none; }
+  .admin-cards { grid-template-columns:1fr 1fr; }
+  .admin-panel { padding:14px; }
+  .student-grid { grid-template-columns:1fr; }
+  .student-contact { grid-template-columns:1fr; }
+  .bs-container { width:calc(100% - 28px); }
+  .bs-nav { gap:10px; flex-wrap:wrap; padding:12px 0; }
+  .bs-links { gap:12px; margin-left:0; order:3; width:100%; }
+  .bs-hero h1 { font-size:clamp(36px,11vw,50px); }
+  .bs-choice-grid,.bs-grid { grid-template-columns:1fr; }
+  .bs-workspace-head { align-items:flex-start; flex-direction:column; }
+}

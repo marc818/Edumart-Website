@@ -1,0 +1,46 @@
+/* Locker availability: shared by the admin dashboard and the student pages. */
+.locker-summary { grid-template-columns: repeat(4, 1fr); }
+.locker-stat.available .admin-num { color: #166534; }
+.locker-stat.reserved .admin-num { color: #966d00; }
+.locker-stat.occupied .admin-num { color: var(--admin-maroon); }
+
+.locker-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 14px; font-size: 13px; color: var(--admin-muted); }
+.locker-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.locker-swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid transparent; display: inline-block; }
+
+.locker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 8px; }
+.locker-tile { position: relative; height: 54px; border-radius: 8px; border: 1px solid transparent; display: grid; place-items: center; font-size: 14px; font-weight: 700; cursor: default; }
+.locker-tile em { position: absolute; bottom: 3px; font-style: normal; font-size: 8px; letter-spacing: 0.6px; }
+
+.locker-tile.available, .locker-swatch.available { background: #e1f2e6; color: #166534; border-color: #b9dfc4; }
+.locker-tile.reserved, .locker-swatch.reserved { background: #fff5d7; color: #966d00; border-color: #efd994; }
+.locker-tile.occupied, .locker-swatch.occupied { background: #ececec; color: #666; border-color: #d6d6d6; }
+
+/* The buyer's own paid locker stands out from every other tile. */
+.locker-tile.mine, .locker-swatch.mine { background: var(--admin-maroon); color: #fff; border-color: var(--admin-gold); }
+.locker-tile.mine { border-width: 2px; box-shadow: 0 0 0 3px #d4a72c55; animation: locker-pulse 1.8s ease-in-out infinite; }
+.locker-tile.mine em { color: var(--admin-gold); }
+@keyframes locker-pulse { 50% { box-shadow: 0 0 0 7px #d4a72c22; } }
+@media (prefers-reduced-motion: reduce) { .locker-tile.mine { animation: none; } }
+
+/* Admin sees who holds each locker, so occupied reads as taken rather than neutral grey. */
+.admin-app .locker-badge.available { background: #e1f2e6; color: #166534; }
+.admin-app .locker-badge.reserved { background: #fff5d7; color: #966d00; }
+.admin-app .locker-badge.occupied { background: #f3dcdd; color: var(--admin-maroon); }
+
+.locker-mine-banner { border: 2px solid var(--admin-gold); background: #fff8e1; border-radius: 10px; padding: 16px 18px; margin-bottom: 20px; }
+.locker-mine-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--admin-maroon); margin-bottom: 10px; }
+.locker-mine-list { display: grid; gap: 10px; }
+.locker-mine-card { display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid var(--admin-line); border-radius: 8px; padding: 12px 14px; }
+.locker-mine-id { min-width: 140px; }
+.locker-mine-id small { display: block; font-size: 10px; letter-spacing: 1px; color: var(--admin-muted); }
+.locker-mine-id strong { font-size: 22px; color: var(--admin-maroon); }
+.locker-mine-info { display: flex; flex-direction: column; gap: 3px; font-size: 14px; }
+.locker-mine-info small { color: var(--admin-muted); }
+.locker-mine-banner .admin-muted { margin: 10px 0 0; font-size: 13px; }
+
+@media (max-width: 1100px) { .locker-summary { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+  .locker-summary { grid-template-columns: 1fr; }
+  .locker-mine-card { flex-direction: column; align-items: flex-start; gap: 6px; }
+}

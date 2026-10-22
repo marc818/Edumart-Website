@@ -1,0 +1,484 @@
+:root {
+  --admin-maroon: #7a1116;
+  --admin-dark: #5b0b10;
+  --admin-gold: #d4a72c;
+  --admin-cream: #fbfaf6;
+  --admin-ink: #242424;
+  --admin-muted: #707070;
+  --admin-line: #e8e2d9;
+}
+
+.admin-app {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f4f1;
+  color: var(--admin-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.admin-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 272px;
+  background: var(--admin-maroon);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 18px #00000014;
+}
+
+.admin-brand {
+  padding: 25px 22px 20px;
+  border-bottom: 1px solid #ffffff2e;
+}
+
+.admin-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.admin-seal {
+  width: 58px;
+  height: 58px;
+  border: 2px solid var(--admin-gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--admin-gold);
+  font-weight: 900;
+}
+
+.admin-brand h1 {
+  font-size: 17px;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.admin-brand p {
+  font-size: 11px;
+  margin: 5px 0 0;
+  color: #f0dca0;
+}
+
+.admin-motto {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: #ead48c;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.admin-nav-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: #e4c873;
+  padding: 22px 22px 8px;
+}
+
+.admin-nav {
+  padding: 0 12px;
+}
+
+.admin-nav button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #f5eeee;
+  text-align: left;
+  padding: 13px 15px;
+  border-radius: 7px;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-nav button:hover,
+.admin-nav button.active {
+  background: #ffffff21;
+  color: #fff;
+}
+
+.admin-nav button.active {
+  border-left: 4px solid var(--admin-gold);
+  padding-left: 11px;
+  font-weight: 700;
+}
+
+.admin-icon {
+  width: 20px;
+  text-align: center;
+  color: var(--admin-gold);
+}
+
+.admin-side-bottom {
+  margin-top: auto;
+  padding: 16px 20px;
+  border-top: 1px solid #ffffff26;
+  font-size: 11px;
+  color: #eadfdf;
+}
+
+/* =========================
+   MAIN AREA
+   ========================= */
+
+.admin-main {
+  margin-left: 272px;
+  width: calc(100% - 272px);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.admin-header {
+  background: #fff;
+  border-bottom: 1px solid var(--admin-line);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-campus-tag {
+  color: var(--admin-maroon);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.admin-header-sub {
+  font-size: 12px;
+  color: #777;
+  margin-top: 3px;
+}
+
+.admin-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-user-name {
+  text-align: right;
+  font-size: 13px;
+}
+
+.admin-user-name small {
+  color: #777;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--admin-maroon);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  border: 2px solid var(--admin-gold);
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.admin-content {
+  padding: 30px 34px;
+}
+
+.admin-page-title {
+  margin-bottom: 24px;
+}
+
+.admin-page-title h2 {
+  margin: 0;
+  color: var(--admin-maroon);
+  font-size: 27px;
+}
+
+.admin-page-title p {
+  margin: 6px 0;
+  color: var(--admin-muted);
+  font-size: 13px;
+}
+
+.admin-kicker {
+  color: var(--admin-gold);
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+   Keep the five student-monitoring cards together on the right.
+   ========================= */
+
+.admin-dashboard-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 245px;
+  gap: 20px;
+  align-items: start;
+}
+
+.admin-dashboard-main-panels {
+  min-width: 0;
+}
+
+.admin-student-monitoring .admin-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.admin-student-monitoring .admin-card {
+  min-height: 100px;
+  padding: 18px 20px;
+}
+
+/* =========================
+   DASHBOARD CARDS
+   ========================= */
+
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.admin-card,
+.admin-panel {
+  background: #fff;
+  border: 1px solid var(--admin-line);
+  border-radius: 9px;
+  box-shadow: 0 2px 8px #00000006;
+}
+
+.admin-card {
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-card:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--admin-gold);
+}
+
+.admin-card small {
+  color: #777;
+}
+
+.admin-num {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 8px;
+  color: var(--admin-maroon);
+}
+
+/* =========================
+   PANELS
+   ========================= */
+
+.admin-panel {
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.admin-panel-head h3 {
+  margin: 0;
+  color: var(--admin-maroon);
+  font-size: 18px;
+}
+
+.admin-panel-head span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.admin-action {
+  border: 1px solid #d9d3c8;
+  background: #fff;
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: #555;
+  cursor: pointer;
+}
+
+.admin-action.primary {
+  background: var(--admin-maroon);
+  border-color: var(--admin-maroon);
+  color: #fff;
+}
+
+.admin-action:hover {
+  border-color: var(--admin-gold);
+}
+
+.admin-actions-row {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.admin-action:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   NOTICE
+   ========================= */
+
+.admin-notice {
+  margin-bottom: 18px;
+  padding: 11px 13px;
+  background: #f8eeee;
+  border-left: 4px solid var(--admin-maroon);
+  font-size: 12px;
+  color: #5b2528;
+}
+
+.admin-muted {
+  color: var(--admin-muted);
+  font-size: 13px;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 13px 9px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #777;
+}
+
+/* =========================
+   STATUS BADGES
+   ========================= */
+
+.admin-badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-badge.pending {
+  background: #fff5d7;
+  color: #966d00;
+}
+
+.admin-badge.verified,
+.admin-badge.approved {
+  background: #e1f2e6;
+  color: #166534;
+}
+
+.admin-badge.rejected {
+  background: #fbe4e4;
+  color: #991b1b;
+}
+
+.admin-badge.suspended {
+  background: #ececec;
+  color: #555;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 1100px) {
+  .admin-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .admin-sidebar {
+    width: 74px;
+  }
+
+  .admin-brand h1,
+  .admin-brand p,
+  .admin-motto,
+  .admin-nav-title,
+  .admin-nav button span,
+  .admin-side-bottom {
+    display: none;
+  }
+
+  .admin-brand {
+    padding: 18px 8px;
+  }
+
+  .admin-brand-row {
+    justify-content: center;
+  }
+
+  .admin-main {
+    margin-left: 74px;
+    width: calc(100% - 74px);
+  }
+
+  .admin-content {
+    padding: 20px;
+  }
+
+  .admin-header {
+    padding: 14px 18px;
+  }
+
+  .admin-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-panel {
+    overflow: auto;
+  }
+}
